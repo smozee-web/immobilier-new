@@ -7,13 +7,72 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="styles.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: hsl(215, 50%, 23%);
+        }
+
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+        }
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero {
+            min-height: 80vh;
+            background: linear-gradient(to bottom right, #f8f9fa, #fff);
+            padding-top: 76px;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-alt {
+            background-color: #f8f9fa;
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-primary {
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">VIDELA Group</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -36,10 +95,10 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero min-vh-100 d-flex align-items-center text-dark">
+    <section class="hero d-flex align-items-center">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <div class="col-lg-8 fade-in">
                     <h1 class="display-4 fw-bold mb-4">Découvrez VIDELA Group</h1>
                     <p class="lead mb-5">
                         Votre Partenaire Immobilier de Confiance pour des investissements simples et sécurisés
@@ -53,9 +112,221 @@
         </div>
     </section>
 
-    <!-- Services Sections will be added here -->
+    <!-- Services Section -->
+    <section id="services" class="section section-alt">
+        <div class="container">
+            <h2 class="text-center mb-5 fade-in">Nos Services</h2>
 
-    <!-- Bootstrap JS and Popper.js -->
+            <!-- Administrative Support -->
+            <div class="row g-4 mb-5 fade-in">
+                <div class="col-lg-6">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <i class="bi bi-shield-check icon-primary me-3"></i>
+                                <h3 class="h4 mb-0">Accompagnement Administratif Complet</h3>
+                            </div>
+                            <p class="text-muted">
+                                Nous prenons en charge toutes les démarches administratives nécessaires jusqu'à l'obtention du titre foncier.
+                            </p>
+                            <ul class="list-unstyled mt-3">
+                                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Transaction sécurisée</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i>Démarches simplifiées</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flexible Payment -->
+                <div class="col-lg-6">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <i class="bi bi-cash-coin icon-primary me-3"></i>
+                                <h3 class="h4 mb-0">Flexibilité de Paiement</h3>
+                            </div>
+                            <p class="text-muted">
+                                Choisissez de régler votre bien immobilier en plusieurs fois pour une plus grande flexibilité.
+                            </p>
+                            <ul class="list-unstyled mt-3">
+                                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Paiement échelonné</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i>Délai jusqu'à 5 ans</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Investment Security -->
+            <div class="row g-4 fade-in">
+                <div class="col-lg-6">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <i class="bi bi-graph-up icon-primary me-3"></i>
+                                <h3 class="h4 mb-0">Investissement Sécurisé</h3>
+                            </div>
+                            <p class="text-muted">
+                                Commission transparente de 10% sur le prix du bien immobilier, avec un intérêt annuel de 10% en cas d'échelonnement.
+                            </p>
+                            <ul class="list-unstyled mt-3">
+                                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Frais transparents</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i>Sans surprise</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal Security -->
+                <div class="col-lg-6">
+                    <div class="card feature-card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-4">
+                                <i class="bi bi-file-text icon-primary me-3"></i>
+                                <h3 class="h4 mb-0">Sécurité Juridique</h3>
+                            </div>
+                            <p class="text-muted">
+                                Protection maximale contre les risques juridiques avec une assistance continue pendant 5 ans.
+                            </p>
+                            <ul class="list-unstyled mt-3">
+                                <li class="mb-2"><i class="bi bi-check2 text-primary me-2"></i>Régularisation garantie</li>
+                                <li><i class="bi bi-check2 text-primary me-2"></i>Assistance continue</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <h2 class="text-center mb-5 fade-in">Témoignages Clients</h2>
+            <div class="row g-4 fade-in">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <i class="bi bi-quote display-4 text-primary mb-3"></i>
+                            <p class="lead mb-4">
+                                "Avec VIDELA Group, j'ai acheté mon terrain en toute sécurité. L'accompagnement administratif était clair et rapide, et je n'ai eu aucun souci pour obtenir mon titre foncier."
+                            </p>
+                            <p class="fw-bold mb-0">Jean-Marc D.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <i class="bi bi-quote display-4 text-primary mb-3"></i>
+                            <p class="lead mb-4">
+                                "J'ai pu financer mon bien immobilier en échelonnant mes paiements. Cela m'a permis de réaliser mon rêve immobilier tout en maîtrisant mon budget."
+                            </p>
+                            <p class="fw-bold mb-0">Sophie L.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="text-center mb-5 fade-in">Contactez-nous</h2>
+            <div class="row justify-content-center fade-in">
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <form id="contactForm">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Nom</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Envoyer</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-light py-4 mt-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">VIDELA Group</h5>
+                    <p class="text-muted mb-0">
+                        Votre partenaire immobilier de confiance pour des investissements sécurisés et flexibles.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Nos Services</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2">Accompagnement Administratif</li>
+                        <li class="mb-2">Flexibilité de Paiement</li>
+                        <li class="mb-2">Sécurité d'Investissement</li>
+                        <li>Sécurité Juridique</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Contact</h5>
+                    <p class="text-muted mb-0">
+                        Pour toute question ou information supplémentaire, n'hésitez pas à nous contacter.
+                    </p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center text-muted mb-0">
+                © <span id="year">2024</span> VIDELA Group. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // Update year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Fade-in animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.fade-in').forEach((element) => {
+                observer.observe(element);
+            });
+        });
+
+        // Contact form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Nous vous contacterons bientôt.');
+            this.reset();
+        });
+    </script>
 </body>
 </html>
